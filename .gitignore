@@ -1,0 +1,9 @@
+# rust
+debug/
+target/
+
+# cpp
+a.out
+
+# etc
+log/
