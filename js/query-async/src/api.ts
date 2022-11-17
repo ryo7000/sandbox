@@ -46,6 +46,9 @@ export const useUsers = () => {
       ];
     });
   };
+  const reset = () => {
+    queryClient.resetQueries({ queryKey: ["users"] });
+  };
 
-  return { data: data!, update, ...rest };
+  return { data: data!, update, reset, ...rest };
 };

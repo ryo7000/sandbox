@@ -2,7 +2,7 @@ import React from "react";
 import { useUsers } from "./api";
 
 export function Users() {
-  const { data, update } = useUsers();
+  const { data, update, reset } = useUsers();
 
   const onInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     update(0, e.target.value);
@@ -16,6 +16,7 @@ export function Users() {
         ))}
       </div>
       <input type="text" onInput={onInput} />
+      <input type="button" value="reload" onClick={() => reset()} />
     </>
   );
 }
