@@ -23,10 +23,8 @@ export const useUsers = () => {
   const result = useQuery({
     queryKey: ["users"],
     queryFn: fetchUsers,
-    suspense: true,
   });
-  // suspenseがtrueなのでdataはundefinedにならない
-  const data = result.data!;
+  const data = result.data;
   const { data: _, ...rest } = result;
 
   const queryClient = useQueryClient();
@@ -50,5 +48,5 @@ export const useUsers = () => {
     queryClient.resetQueries({ queryKey: ["users"] });
   };
 
-  return { data: data!, update, reset, ...rest };
+  return { data, update, reset, ...rest };
 };
