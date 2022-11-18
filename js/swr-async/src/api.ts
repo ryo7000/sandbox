@@ -1,6 +1,7 @@
-import useAspidaSWR from "@aspida/swr";
+import { getSWRDefaultKey } from "@aspida/swr";
 import aspida from "@aspida/fetch";
 import api from "./api/$api";
+import useSWR from "swr";
 
 export type User = {
   id: number;
@@ -11,7 +12,12 @@ export type User = {
 
 export const useUsers = () => {
   const client = api(aspida());
-  const { mutate, ...rest } = useAspidaSWR(client.users);
+  // useAspidaSWRを使うとSWRConfigの設定値が無視されてしまう
+  // https://github.com/aspida/aspida/issues/737
+  const { mutate, ...rest } = useSWR(
+    getSWRDefaultKey(client.users, "get"),
+    client.users.$get
+  );
 
   const update = (index: number, newName: string) => {
     mutate(
