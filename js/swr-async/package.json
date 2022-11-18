@@ -10,6 +10,8 @@
     "api:build": "aspida -c ./aspida.config.cjs"
   },
   "dependencies": {
+    "@aspida/fetch": "^1.11.0",
+    "@aspida/swr": "^1.11.0",
     "aspida": "^1.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

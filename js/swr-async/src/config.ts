@@ -34,10 +34,6 @@ export const localStorageProvider = () => {
 };
 
 export const config: SWRConfiguration = {
-  fetcher: async (input: RequestInfo, init?: RequestInit) => {
-    await new Promise((res) => setTimeout(res, 1000));
-    return fetch(input, init).then((res) => res.json());
-  },
   suspense: true,
   revalidateOnFocus: false,
   revalidateIfStale: false,

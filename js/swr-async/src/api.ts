@@ -1,4 +1,6 @@
-import useSWR from "swr";
+import useAspidaSWR from "@aspida/swr";
+import aspida from "@aspida/fetch";
+import api from "./api/$api";
 
 export type User = {
   id: number;
@@ -7,10 +9,9 @@ export type User = {
   email: string;
 };
 
-const key = "http://jsonplaceholder.typicode.com/users";
-
 export const useUsers = () => {
-  const { mutate, ...rest } = useSWR<User[]>(key);
+  const client = api(aspida());
+  const { mutate, ...rest } = useAspidaSWR(client.users);
 
   const update = (index: number, newName: string) => {
     mutate(

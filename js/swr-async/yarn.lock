@@ -10,6 +10,20 @@
     "@jridgewell/gen-mapping" "^0.1.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
+"@aspida/fetch@^1.11.0":
+  version "1.11.0"
+  resolved "https://registry.yarnpkg.com/@aspida/fetch/-/fetch-1.11.0.tgz#19c3757f07ad8e42575253cad8ced0ff064628fa"
+  integrity sha512-ISi67d6YIL9thIXvbq6ac0UYAtcojILCiOEbjhCky55uyoGHV7z+ISgwzUf7X8CxTdY8iXiimcz6AMNtBfdiyw==
+  dependencies:
+    aspida "^1.7.1"
+
+"@aspida/swr@^1.11.0":
+  version "1.11.0"
+  resolved "https://registry.yarnpkg.com/@aspida/swr/-/swr-1.11.0.tgz#50cd841936d4d5b41413a87d5bd81831620fa71b"
+  integrity sha512-GmR0VaUPWw9EaeMi96BSBf3Y7dGMxrPAD8z97/3ewsokpoKmK0FiX+SBt+ygGHKqqKRnCLwgQvfR0NEpTCMo8A==
+  dependencies:
+    aspida "^1.7.1"
+
 "@babel/code-frame@^7.18.6":
   version "7.18.6"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.18.6.tgz#3b25d38c89600baa2dcc219edfa88a74eb2c427a"
@@ -349,7 +363,7 @@ anymatch@~3.1.2:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
-aspida@^1.11.0:
+aspida@^1.11.0, aspida@^1.7.1:
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/aspida/-/aspida-1.11.0.tgz#a01f75ed3c85929de592afc71802fa1c689a3b7d"
   integrity sha512-TVQ4bKJQ5nLm6GCZRIzBA8fQe7AhilYkpsQWg0DeBNKm2u7kbulxyCD8xXOqs41Xkrt+jNG7/GGkkseDPgUSOQ==
