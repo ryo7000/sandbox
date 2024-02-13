@@ -1,0 +1,11 @@
+html
+  head
+    title= title
+  body
+    block content
+      h1= title
+      p #{content}
+      form(method="post" action="/login")
+        input(type="text" name="userName")
+        input(type="text" name="password")
+        input(type="submit" name="送信")

@@ -1,0 +1,7 @@
+FROM ubuntu:jammy
+
+RUN apt-get update && apt-get install -y --no-install-recommends nginx && rm -rf /var/lib/apt/lists/*
+
+COPY dockerfile/nginx.conf /etc/nginx/
+
+CMD ["nginx", "-g", "daemon off;"]
